@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+
+
+
+    
+
+    <body>
+        <script>
+        
+
+        let arr=[]
+        for(let i=1;i<=4;i++)
+        {
+            arr[i-1]=+prompt(`Q${i} income`)
+        }
+        let Q1=arr[0]
+        let Q2=arr[1]
+        let Q3=arr[2]
+        let Q4=arr[3]
+        let max=arr[0]
+        let max_index=0;
+        for(let i=0;i<4;i++)
+        {
+            if(arr[i]>max)
+        {
+            max=arr[i]
+            max_index=i
+        }
+        }
+        switch (max_index)
+        {
+            case 0:
+                Q2=Q2/Q1*460
+                Q3=Q3/Q1*460
+                Q4=Q4/Q1*460
+                Q1=460
+                break
+            case 1:
+                Q1=Q1/Q2*460
+                Q3=Q3/Q2*460
+                Q4=Q4/Q2*460
+                Q2=460
+                break
+            case 2:
+                Q2=Q2/Q3*460
+                Q1=Q1/Q3*460
+                Q4=Q4/Q3*460
+                Q3=460
+                break
+            case 3:
+                Q2=Q2/Q4*460
+                Q3=Q3/Q4*460
+                Q1=Q1/Q4*460
+                Q4=460
+                break
+        }
+        
+
+
+        document.write(`
+            <style>
+        *
+        {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-style: normal;
+
+        }
+        .box
+        {
+            margin:0 auto;
+            /* background-color: pink; */
+            width: 800px;
+            height: 500px;
+            margin-top: 50px;
+            border-left: 2px solid #333;
+            border-bottom: 2px solid #333;
+            display: flex;
+            justify-content: space-around;
+            align-items: end;
+        }
+        .chart1,.chart2,.chart3,.chart4
+        {
+            width: 80px;
+            background-color: skyblue;
+        }
+        .chart1
+        {
+            height: ${Q1}px;
+            position: relative;
+        }
+        .chart1>span
+        {
+            position: absolute;
+            font-size: 25px;
+            top: -30px;
+            left: 50%;
+            transform: translate(-50%,0);
+        }
+        .chart1>p
+        {
+            position: absolute;
+            bottom: -40px;
+            font-size: 25px;
+            left: 50%;
+            transform: translate(-50%,0);
+        }
+        .chart2
+        {
+            height: ${Q2}px;
+            position: relative;
+        }
+        .chart2>span
+        {
+            position: absolute;
+            font-size: 25px;
+            top: -30px;
+            left: 50%;
+            transform: translate(-50%,0);
+        }
+        .chart2>p
+        {
+            position: absolute;
+            bottom: -40px;
+            font-size: 25px;
+            left: 50%;
+            transform: translate(-50%,0);
+        }
+        .chart3
+        {
+            height: ${Q3}px;
+            position: relative;
+        }
+        .chart3>span
+        {
+            position: absolute;
+            font-size: 25px;
+            top: -30px;
+            left: 50%;
+            transform: translate(-50%,0);
+        }
+        .chart3>p
+        {
+            position: absolute;
+            bottom: -40px;
+            font-size: 25px;
+            left: 50%;
+            transform: translate(-50%,0);
+        }
+        .chart4
+        {
+            height: ${Q4}px;
+            position: relative;
+        }
+        .chart4>span
+        {
+            position: absolute;
+            font-size: 25px;
+            top: -30px;
+            left: 50%;
+            transform: translate(-50%,0);
+        }
+        .chart4>p
+        {
+            position: absolute;
+            bottom: -40px;
+            font-size: 25px;
+            left: 50%;
+            transform: translate(-50%,0);
+        }
+    </style>
+        <div class="box">
+            <div class="chart1"><span>${arr[0]}</span><p>Q1</p></div>
+            <div class="chart2"><span>${arr[1]}</span><p>Q2</p></div>
+            <div class="chart3"><span>${arr[2]}</span><p>Q3</p></div>
+            <div class="chart4"><span>${arr[3]}</span><p>Q4</p></div>
+        </div>
+    
+
+
+
+        `)
+
+    </script>
+        
+    
+    </body>
+
+
+</html>

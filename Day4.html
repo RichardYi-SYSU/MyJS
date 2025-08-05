@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //bubble sort
+        let arr=[2,3,1,4,5]
+        let temp=null
+        for(let i=0;i<arr.length;i++)
+    {
+        for(let j=0;j<arr.length-i-1;j++)
+    {
+        if(arr[j+1]>arr[j])
+    {
+        temp=arr[j]
+        arr[j]=arr[j+1]
+        arr[j+1]=temp
+    }
+    }
+    }
+        //sort
+        let new_arr=[2,3,1,4,5]
+        new_arr.sort(function(a,b){return a-b})//升序
+        new_arr.sort(function(a,b){return b-a})//降序
+
+    </script>
+</body>
+</html>

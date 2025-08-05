@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let i=0
+        let signal =1
+        let money=0
+        let temp=0
+        while(signal)
+    {
+        i=+prompt(`Enternum`)
+        switch (i)
+        {
+            case 1:
+                temp=+prompt('存入金额')
+                money+=temp
+                temp=0
+                break
+            case 2:
+                temp=+prompt('取出金额')
+                if (money-temp<0)
+                {
+                    alert('illegal')
+                    temp=0
+                    break
+                }else
+                {
+                    money-=temp
+                    temp=0
+                    break
+                }
+            case 3:
+                alert(money)
+                break
+            case 4:
+                signal=0
+                break
+        }
+    }
+       
+
+    </script>
+</body>
+</html>
