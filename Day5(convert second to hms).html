@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //let time = +prompt()
+        let time=99999
+        function convert(time)
+        {
+            let hour=Math.floor(time/3600)
+            let min=Math.floor((time%3600)/60)
+            let sec=Math.floor((time%3600)%60)
+            return [hour,min,sec]
+        }   
+        let hms=[]
+        hms=convert(time)
+        document.write(`${time}秒为${hms[0]}时${hms[1]}分${hms[2]}秒`)
+        //逻辑中断
+        let age=18
+        console.log(false&&age++)
+        console.log(age)//仍为18，对于&&前为假后直接跳过，都真则返回最后一个真值
+        console.log(11||22)//输出第一个真值
+
+        //'',0,undefined,null,false,NaN转换为布尔值后都是false，其余则为true
+        console.log(Boolean(0))
+        console.log(Boolean(undefined))
+    </script>
+</body>
+</html>
