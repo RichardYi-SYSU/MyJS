@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    span{
+        display: inline-block;
+        width: 100px;
+        padding: 5px 10px;
+        border: 1px solid pink;
+        margin:2px;
+        border-radius: 5px;
+        box-shadow: 2px 2px 2px rgba(255, 192, 203, 0.4);
+        background-color: rgba(255, 192, 203, .1);
+        text-align: center;
+        color: hotpink;
+    }
+</style>
+<body>
+   <script>
+    function getSum(n,m)
+    {
+        let sum=0
+        for(let i=n;i<=m;i++)
+        {
+            sum+=i
+        }
+        document.write(`<span>${sum}</span>`)
+    }
+    function calcScore(arr)
+    {
+        let sum=0
+        for(let i=0;i<arr.length;i++)
+    {
+        sum+=arr[i]
+    }
+    document.write(`<span>${sum}</span>`)
+
+    }
+
+    function Sum(a,b)
+    {
+        document.write(`<span>${a+b}</span>`)
+
+    }
+    function All()
+    {
+        let sum=0
+        for(let i=1;i<=100;i++)
+    {
+        sum+=i
+    }
+    document.write(`<span>${sum}</span>`)
+    }
+    function GetMaxNum(a=0,b=0)
+    {
+            if(a>b)
+        {
+            return a
+        }else
+        {
+            return b
+        }
+    }
+    function GetArrnum(arr)
+    {
+        arr.sort((a,b)=>a-b)
+        return [arr[0],arr[arr.length-1]]
+    }
+    Sum(1,5)
+    Sum(114514,1919810)
+    All()
+    stu1=[100,200,100,400]
+    calcScore(stu1)
+    getSum(100,200)
+    let newArr=GetArrnum(stu1)
+    //匿名函数写法
+    (function(){/*填入代码*/})()
+</script> 
+</body>
+</html>
