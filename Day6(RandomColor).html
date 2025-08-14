@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getRandom(N,M)
+    {
+        return Math.floor(Math.random()*(M-N+1))+N
+    }
+
+    //随机颜色RGB
+    let RandomRGB=[getRandom(0,255),getRandom(0,255),getRandom(0,255)]
+    console.log(RandomRGB)
+    //随机颜色HEX
+    function getRandomColor(flag)
+    {
+            if(flag)
+        {
+                let rand=null
+                let randhex=['#']
+                for(let i=1;i<=6;i++)
+            {
+                rand=getRandom(0,15)
+                switch(rand)
+                {
+                    case 10:randhex[i]='a'
+                    break
+                    case 11:randhex[i]='b'
+                    break
+                    case 12:randhex[i]='c'
+                    break
+                    case 13:randhex[i]='d'
+                    break
+                    case 14:randhex[i]='e'
+                    break
+                    case 15:randhex[i]='f'
+                    break
+                    default:randhex[i]=rand
+                    break
+                }
+            }
+            return randhex.join("")
+        }else
+        {
+            let randrgb=[getRandom(0,255),getRandom(0,255),getRandom(0,255)]
+            return `rgb(${randrgb[0]},${randrgb[1]},${randrgb[2]})`
+        }
+    }
+    let ans=getRandomColor(1)
+    console.log(ans)
+    ans=getRandomColor(0)
+    console.log(ans)
+    </script>
+</body>
+</html>

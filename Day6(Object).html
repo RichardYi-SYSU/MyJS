@@ -108,8 +108,22 @@
     }
     document.write(`</table>`)
     let array=[1,3,5,7,9]
+    console.log(Math.abs(-10/3))
+    //生成0-10的随机数
+    console.log(Math.ceil(Math.random()*(11)))
+    //生成N-M之间的随机数：Math.floor(Math.random()*(M-N+1))+N
+    function getRandom(N,M)
+    {
+        return Math.floor(Math.random()*(M-N+1))+N
+    }
     
-    
+    let obj1={age:18}
+    let obj2=obj1//此时为地址在赋值 
+    obj2.age=20//通过同一地址对堆上相同数据作更改
+    console.log(obj1.age);
+
+
+
     </script>
 </body>
 </html>
