@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>这是一个抽奖程序</h1>
+    <div id="prize_1">一等奖：</div>
+    <div id="prize_2">二等奖：</div>
+    <div id="prize_3">三等奖：</div> 
+    
+
+    <script>
+        const person=['小明','小美','小亮','小王','小赵']
+        const winner_num=3
+        function getRandomNum(arr)
+        {
+            return Math.floor(Math.random()*(arr.length))
+        }
+        function generatewinner(arr,winner_num)
+        {
+            let ans=[]
+            let rand=null
+            for(let i=0;i<winner_num;i++)
+            {
+                rand=getRandomNum(arr)
+                ans[i]=arr[rand]
+                arr.splice(rand,1)
+            }
+            return ans
+        }
+
+        const winnerlist=generatewinner(person,winner_num)
+        
+        for(let i=0;i<winner_num;i++)
+        {
+            document.querySelector(`#prize_${i+1}`).innerHTML=`${document.querySelector(`#prize_${i+1}`).innerText}${winnerlist[i]}`
+        }
+
+        const boxstyle=document.querySelector('div')
+        boxstyle.style.backgroundColor ='gray'
+        //background-color==backgroundColor:小驼峰命名法
+    </script>
+</body>
+</html>
