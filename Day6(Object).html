@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1
+        {
+            text-align: center;
+        }
+        table,th,td
+        {
+            border:1px solid #000000;
+
+        }
+        th
+        {
+            padding: 5px 30px;
+        }
+        table
+        {
+            border-collapse: collapse;
+            text-align: center;
+            height: 100px;
+            margin: 0 auto;
+            font-size: 20px;
+        }
+</style>
+<body>
+    <script>
+    //     let 对象名 ={
+    //         属性名：属性值，
+    //         方法名：函数
+    // }
+
+    let iPhone={
+        'Phone-name':'iPhone16',
+        num:'1145141919810',
+        weight:'550g',
+        add:'China Mainland'
+    }
+    iPhone.price='6999元'
+    iPhone.color='space gray'
+
+    //查对象方法：
+    // 1>对象名.属性名 
+    // 2>对象名['属性名']
+
+    document.write(`
+        <div>${iPhone['Phone-name']}</div>
+        <br>
+        <div>${iPhone.num}</div>
+        <br>
+        <div>${iPhone.weight}</div> 
+
+    `)
+    console.log(iPhone)
+    let arr=[1,2,3,4,5]
+
+    let person={
+        name:'Richard',
+        //方法
+        sayHi: function()
+        {
+            document.write(`Hi`)
+        }
+    }
+
+    person.sayHi()
+
+    //遍历对象
+    for(let key in iPhone)
+    {
+        //console.log(key);
+        console.log(iPhone[key]);
+        //此时key代表属性值的字符串，因此使用[]而不是.
+    }
+    console.log(`-------------------`);
+    //渲染学生信息
+    let stu=[
+        {name:'Richard1',age:1,gender:'Male',hometown:'Hebei'},
+        {name:'Richard2',age:2,gender:'Female',hometown:'Hubei'},
+        {name:'Richard3',age:3,gender:'Male',hometown:'AnHui'},
+        {name:'Richard4',age:4,gender:'Female',hometown:'Guangdong'}
+    ]
+    document.write(`
+        <table>
+            <tr>
+                <th>Number</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Hometown</th>
+            </tr>
+
+    `)
+    for(let i=0;i<stu.length;i++)
+    {
+        document.write(`<tr>`)
+        document.write(`<td>${i+1}</td>`)
+        for(let k in stu[i])
+        {
+            document.write(`<td>${stu[i][k]}</td>`)
+        }
+        document.write(`</tr>`)
+    }
+    document.write(`</table>`)
+    let array=[1,3,5,7,9]
+    
+    
+    </script>
+</body>
+</html>
