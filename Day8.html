@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ad{
+            width: 300px;
+            height: 100px;
+            background-color: pink;
+        }
+        .closed{
+            width: 0;
+            height: 0;
+
+        }
+    </style>
+</head>
+<body>
+    <button>打开bing</button>
+    <div></div>
+   
+    <div class="ad">
+        <button class="closeAd">X</button>
+    </div>
+    <script>
+        let i=1
+        document.querySelector('button').addEventListener('click',function(){
+            document.querySelector('div').innerHTML=`点击次数为${i++}`
+            window.open(`https://bing.com`,"_blank")
+        })
+        document.querySelector('.closeAd').addEventListener('click',function(){
+            document.querySelector('.ad').style.display='none'
+            document.querySelector('.closeAd').style.display='none'
+        })
+    </script>
+</body>
+</html>

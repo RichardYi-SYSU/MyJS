@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .style1
+    {
+        background-color: pink;
+    }
+    .style2
+    {
+        background-color: skyblue;
+    }
+    </style>
 </head>
 <body>
     <h1>这是一个抽奖程序</h1>
@@ -40,8 +50,12 @@
         }
 
         const boxstyle=document.querySelector('div')
-        boxstyle.style.backgroundColor ='gray'
         //background-color==backgroundColor:小驼峰命名法
+        boxstyle.classList.add('style1')
+        boxstyle.classList.add('style2')
+        boxstyle.classList.remove('style2')
+        boxstyle.classList.toggle('style2')//toggle()有就删，没有就加
+        
     </script>
 </body>
 </html>

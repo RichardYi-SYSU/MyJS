@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            width: 200px;
+            height: 30px;
+
+        }
+    </style>
+</head>
+<body>
+    <button >已阅读用户协议<span></span></button>
+    <script>
+        let btn=document.querySelector('button')
+        let i=60
+        btn.disabled=true
+        let num=setInterval(function(){
+            document.querySelector('span').innerHTML=`(${i})`
+            if(i==0)
+            {
+                clearInterval(num)
+                document.querySelector('span').innerHTML=``
+                btn.disabled=false
+            }
+            i--
+            
+        },1000)
+        
+        
+
+    </script>
+</body>
+</html>

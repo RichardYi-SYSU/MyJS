@@ -72,6 +72,41 @@
         
         box.innerHTML=`<strong>${getRandomColor(1)}</strong>`
         
+        
+    </script>
+    <!-- 表单对象 -->
+    <input type="text" value="Computer">
+    全选
+    <input type="checkbox" class="allCheckbox">
+    others
+    
+    <input type="checkbox" class="otherCheckbox">
+    <input type="checkbox" class="otherCheckbox">
+    <input type="checkbox" class="otherCheckbox">
+    
+    <div data-custom="1"></div>   <!-- 此时data-后为自定义属性 -->
+    <script>
+        const CheckAll=document.querySelector('.allCheckbox')
+        const CheckOthers=document.querySelectorAll('.otherCheckbox')
+        
+        setInterval(function(){
+        
+    },2000)
+        if(CheckAll.checked==true)
+    {
+        for(let i=0;i<CheckOthers.length;i++)
+        {
+            CheckOthers[i].checked=true
+        }
+    }else
+    {
+        for(let i=0;i<CheckOthers.length;i++)
+        {
+            CheckOthers[i].checked=false
+        }
+    }
+    //let 变量名=setInterval(function,time)
+    //clearInterval(变量名) 用于关闭计时器
     </script>
 </body>
 </html>

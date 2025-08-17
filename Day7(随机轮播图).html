@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style: none;
+        }
+        .wrapper
+        {
+            width: 600px;
+            height: 400px;
+            background-color: pink;
+            margin:0 auto;
+            position: relative;
+        }
+        .bottom
+        {
+            width: 600px;
+            height: 80px;
+            background-color: skyblue;
+            position: absolute;
+            bottom: 0px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .bottom ul
+        {
+            display: flex;
+            margin-left: 18px;
+            margin-top: 13px;
+            align-items: center;
+        }
+        .bottom ul li.disable
+        {
+            width: 7px;
+            height: 7px;
+            border-radius: 7px;
+            background-color: rgba(239, 239, 239, 0.559);
+            margin-right: 12px;
+        }
+        .active
+        {
+           width: 12px ;
+           height: 12px ;
+           border-radius: 12px ;
+           background-color: #fff ; 
+           margin-right: 12px;
+        }
+        .bottom p
+        {
+            font-size: 20px;
+            margin-left: 15px;
+            margin-top: 10px;
+        }
+        img{
+            width: 600px;
+            height: 400px;
+        }
+        .arrow
+        {
+            position: absolute;
+            display: flex;
+            justify-content: space-between;
+            width: 80px;
+            
+            right: 10px;
+            top:10px;
+        }
+        .arrow .leftarrow
+        {
+            background-color: rgba(0, 0, 0, 0.2);
+            font-size: 20px;
+            width: 30px;
+            height: 30px;
+            border-radius: 10px;
+            line-height: 27.5px;
+            text-align: center;
+        }
+        .arrow .rightarrow
+        {
+            background-color: rgba(0, 0, 0, 0.2);
+            font-size: 20px;
+            width: 30px;
+            height: 30px;
+            border-radius: 10px;
+            line-height: 27.5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <img src="./Day7images/slider_1.jpeg" alt="" class="slider">
+        <div class="bottom">
+            <p>这是一段文字</p>
+            <ul>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+                <li class="disable"></li>
+            </ul>
+            <div class="arrow">
+                <div class="leftarrow"><</div>
+                <div class="rightarrow">></div>
+            </div>
+        </div>
+        
+    </div>
+    <script>
+        let slider_data=[
+            {
+                name:'这是第一张图片',
+                src:'./Day7images/slider_1.jpeg',
+                color:'rgb(38,103,138,0.8)'
+            },
+            {
+                name:'这是第二张图片',
+                src:'./Day7images/slider_2.jpeg',
+                color:'rgb(118,167,108,0.8)'
+            },
+            {
+                name:'这是第三张图片',
+                src:'./Day7images/slider_3.jpeg',
+                color:'rgb(170,194,216,0.8)'
+            },
+            {
+                name:'这是第四张图片',
+                src:'./Day7images/slider_4.jpeg',
+                color:'rgb(116,154,182,0.8)'
+            },
+            {
+                name:'这是第五张图片',
+                src:'./Day7images/slider_5.jpeg',
+                color:'rgb(174,121,50,0.8)'
+            }
+        ]
+
+        //随机跳转
+        // let count=0
+        // const slider=setInterval(function(){
+        // document.querySelectorAll('li').forEach(
+        //     li=>{li.className='disable'}
+        // )
+        // const rand=Math.floor(Math.random()*slider_data.length)
+        // const img=document.querySelector('img')
+        // const title=document.querySelector('.bottom p')
+        // const bottomColor=document.querySelector('.bottom')
+        // const botton=document.querySelector(`ul>li:nth-child(${rand+1})`)
+        // img.src=slider_data[rand].src
+        // title.innerHTML=`${slider_data[rand].name}`
+        // bottomColor.style.backgroundColor=slider_data[rand].color
+        // botton.className='active'
+        
+        // count++
+        // if(count==10)
+        // {
+        //     clearInterval(slider)
+        // }
+        // },1000)
+        
+        //点击跳转
+        let num=0
+        let leftarrow=document.querySelector('.leftarrow')
+        let rightarrow=document.querySelector('.rightarrow')
+        const img=document.querySelector('img')
+        const title=document.querySelector('.bottom p')
+        const bottomColor=document.querySelector('.bottom')
+        let botton=null
+        
+
+       
+        
+        
+        leftarrow.addEventListener('click',()=>{
+            num= num==0 ? slider_data.length-1:num-1
+            document.querySelectorAll('li').forEach(
+            li=>{li.className='disable'}
+        )
+            button=document.querySelector(`ul>li:nth-child(${num+1})`)
+            img.src=slider_data[num].src
+            title.innerHTML=`${slider_data[num].name}`
+            bottomColor.style.backgroundColor=slider_data[num].color
+            button.className='active'
+        })
+        rightarrow.addEventListener('click',()=>{
+            num= num==4 ? 0 : num+1
+            document.querySelectorAll('li').forEach(
+            li=>{li.className='disable'}
+        )
+            button=document.querySelector(`ul>li:nth-child(${num+1})`)
+            img.src=slider_data[num].src
+            title.innerHTML=`${slider_data[num].name}`
+            bottomColor.style.backgroundColor=slider_data[num].color
+            button.className='active'
+        })
+        
+
+    </script>
+    
+    
+</body>
+</html>

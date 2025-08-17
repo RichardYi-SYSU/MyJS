@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>随机问答</h1>
+        <h3>问题是：</h3>
+        <button class="begin">开始</button>
+        <button class="end">结束</button>
+    </div>
+    <script>
+        let answerSheet=[
+            '请你自我介绍一下你自己',
+            '说说你最大的缺点?',
+            '你对于我们公司了解多少？',
+            '请说出你选择这份工作的动机？',
+            '在五年的时间内，你的职业规划？',
+            '你还有什么问题要问吗？'
+        ]
+        let counterNum=null
+        let rand=0
+        document.querySelector('.begin').addEventListener('click',function(){counterNum=setInterval(function(){
+            rand=Math.floor(Math.random()*(answerSheet.length))
+            document.querySelector('h3').innerHTML=`问题是：${answerSheet[rand]}`
+            
+        },50)})
+        document.querySelector('.end').addEventListener('click',function(){clearInterval(counterNum)})
+        
+    </script>
+</body>
+</html>
