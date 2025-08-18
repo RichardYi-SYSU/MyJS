@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *
+        {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+            color: #333;
+        }
+        .mi
+        {
+            width: 250px;
+            margin: 0 auto;
+            
+        }
+        input
+        {
+            margin: 0 auto;
+            padding: 15px;
+            width: 250px;
+            height: 40px;
+            border:2px solid gray;
+        }
+        .result-list
+        {
+            display: flex;
+            flex-direction: column;
+            border: 2px solid orange;
+            border-top: 0;
+            display: none;
+        }
+        .result-list li
+        {
+            padding:5px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="mi">
+        <input type="search" placeholder="小米笔记本">
+        <ul class="result-list">
+            <li><a href="#">全部商品</a></li>
+            <li><a href="#">小米13</a></li>
+            <li><a href="#">小米14</a></li>
+            <li><a href="#">小米15</a></li>
+            <li><a href="#">小米空调</a></li>
+            <li><a href="#">小米笔记本</a></li>
+            <li><a href="#">黑鲨</a></li>
+        </ul>
+    </div>
+    <script>
+        const search=document.querySelector('input')
+        search.addEventListener('focus',()=>{
+            document.querySelector('.result-list').style.display='flex'
+        })
+        search.addEventListener('blur',()=>{
+            document.querySelector('.result-list').style.display='none'
+        })
+    </script>
+</body>
+</html>

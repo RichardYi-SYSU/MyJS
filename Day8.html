@@ -19,7 +19,7 @@
 </head>
 <body>
     <button>打开bing</button>
-    <div></div>
+    <input type="text"><span></span>
    
     <div class="ad">
         <button class="closeAd">X</button>
@@ -34,6 +34,21 @@
             document.querySelector('.ad').style.display='none'
             document.querySelector('.closeAd').style.display='none'
         })
+        const input=document.querySelector('input')
+        input.addEventListener('focus',()=>{
+            document.querySelector('span').innerHTML='获得焦点'
+        })
+        input.addEventListener('blur',()=>{
+            document.querySelector('span').innerHTML='失去焦点'
+        })
+        input.addEventListener('input',()=>{
+            console.log(input.value)
+        })
+        //事件对象
+        input.addEventListener('click',function(event){
+            console.log(event)//此时event即为该点击事件的对象
+        })
+
     </script>
 </body>
 </html>

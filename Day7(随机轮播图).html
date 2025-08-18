@@ -203,7 +203,18 @@
             bottomColor.style.backgroundColor=slider_data[num].color
             button.className='active'
         })
-        
+        let slider=setInterval(function(){
+            rightarrow.click()
+        },1000)
+
+        document.querySelector('.wrapper').addEventListener('mouseenter',()=>{
+            clearInterval(slider)
+        })
+        document.querySelector('.wrapper').addEventListener('mouseleave',()=>{
+            slider=setInterval(function(){
+            rightarrow.click()
+        },1000)
+        })
 
     </script>
     

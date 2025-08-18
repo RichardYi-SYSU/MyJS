@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *
+        {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            
+            color: gray;
+        }
+        .comment
+        {
+            display: flex;
+        }
+        .box
+        {
+            padding:6px;
+            width: 500px;
+            height: 60px;
+            border: 1px solid transparent;
+            border-radius: 5px;
+            resize: none;
+            background-color: #dcdcdc;
+            transition: all .3s;
+            color:#000000
+
+        }
+        .box:focus
+        {
+            height: 80px;
+            outline: none;
+            background-color: #fff;
+            border:1px solid rgb(212, 212, 212);
+        }
+        .box:focus+.send
+        {
+            height: 80px;
+        }
+        
+        .send
+        {
+            margin-left: 8px;
+            width: 80px;
+            height: 60px;
+            background-color: rgb(54, 174, 255);
+            border-radius: 6px;
+            color: white;
+            transition: all .3s;
+            border: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="comment">
+        
+        <textarea placeholder="发一条评论,按回车发送" rows="2" class="box"></textarea>
+        <button class="send">
+              发布
+        </button>
+    </div>
+    <p>0/15字</p>
+    <script>
+        const input=document.querySelector('textarea')
+        const textNum=document.querySelector('p')
+        const sendButton=document.querySelector('.send')
+        
+        input.addEventListener('input',function(){
+            console.log(this)//谁调用，this就是谁
+            textNum.innerHTML=`${input.value.length}/15字`
+            if(input.value.length>15){
+            textNum.style.color='red'
+            sendButton.style.backgroundColor='gray'
+            sendButton.disabled=true
+            
+            }else{
+            textNum.style.color='gray'
+            sendButton.style.backgroundColor='rgb(54, 174, 255)'
+            sendButton.disabled=false
+            }
+        })
+        input.addEventListener('keyup',function(e){
+            if(e.key==='Enter'){
+                window.open('./Day8(comment_1).html',"_self")
+            }
+            
+            
+        })
+        sendButton.addEventListener('click',()=>{
+            window.open('./Day8(comment_1).html',"_self")
+        })
+        
+        
+    </script>
+</body>
+</html>
