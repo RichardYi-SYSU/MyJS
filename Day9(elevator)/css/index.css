@@ -1,0 +1,94 @@
+.banner
+{
+    height: 500px;background-color: #f5f5f5;
+    
+}
+.banner .wrapper
+{
+    height: 500px;
+    background-color: pink;
+    display: flex;
+    position: relative;
+}
+.subnav
+{
+    width: 250px;
+    height: 500px;
+    
+}
+.subnav li
+{
+    height: 50px;
+    width: 250px;
+    background-color:rgba(0, 0, 0, 0.6);
+    padding-left: 30px;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s;
+}
+.subnav li:hover
+{
+    background-color: #229e71;;
+}
+.subnav li>a
+{
+    color:#f5f5f5;
+    font-size: 18px;
+}
+.subnav li>a:nth-child(2)
+{
+    margin-left:20px;
+    font-size: 14px;
+}
+
+.subnav li>a:nth-child(3)
+{
+    margin-left: 8px;
+    font-size: 14px;
+}
+.subnav li>span
+{
+    color: #f5f5f5;
+    margin-left: 75px;
+}
+.banner .pic
+{
+    
+    display: flex;
+    overflow: hidden;
+}
+
+.banner ol
+{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    /* background-color: pink; */
+}
+.banner ol li
+{
+    height: 18px;
+    width: 18px;
+    margin:0px 5px;
+    background-color: transparent;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+.banner ol li:hover
+{
+    background-color: rgba(255, 255, 255, 0.782);
+}
+
+.banner ol li span
+{
+    height: 12px;
+    width: 12px;
+    border-radius: 12px;
+    background-color: rgb(144, 144, 144);
+    
+}
+
